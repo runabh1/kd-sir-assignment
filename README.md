@@ -11,6 +11,16 @@ You can install the dependencies using pip:
 pip install tensorflow pillow numpy h5py
 ```
 
+## Troubleshooting: Model Compatibility
+
+If you encounter an error like `ValueError: Unknown keyword argument: 'quantization_config'` while loading the model, it is likely due to version differences in how Keras saves metadata.
+
+To fix this, run the provided utility script:
+```bash
+python fix_h5.py
+```
+This script removes the incompatible metadata from `cats_dogs_model.h5` without affecting the model's weights or performance.
+
 ## Running the Application
 
 To start the UI, simply run the `app.py` script:
